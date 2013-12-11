@@ -1,4 +1,4 @@
-package de.bschandera.MyDbms.main;
+package de.bschandera.mydbms.main;
 
 public class Main {
 

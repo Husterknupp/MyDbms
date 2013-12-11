@@ -1,42 +1,51 @@
-package de.bschandera.MyDbms.main;
+package de.bschandera.mydbms.main;
 
 import java.net.URI;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
+
+import de.bschandera.mydbms.blocks.Block;
 
 public final class DiskManager {
 
 	private Block firstEmptyBlock;
 	private LinkedHashMap<URI, Boolean> blockListWithStatusFlag;
 
+	/**
+	 * Read init file and load file paths of all Dbms {@linkplain Block}s located in the only existing segment
+	 * <p>
+	 * Prepare a {@linkplain HashMap} with every file name of every just loaded {@linkplain Block} and its status
+	 * (empty/written)
+	 * <p>
+	 * Set firstEmptyBlock<br>
+	 * Set firstWrittenBlock
+	 */
 	public void initializeSegment() {
-		/*
-		 * read init file and load file names of all Blocks in the only existing segment
-		 * 
-		 * prepare a hashmap of Block files where every just loaded block is accessable
-		 * 
-		 * set firstEmptyBlock
-		 * 
-		 * set firstWrittenBlock
-		 */
 	}
 
+	/**
+	 * Look for a specified {@linkplain Block} in the current segment.
+	 * 
+	 * @param blockNumber
+	 *            The position of a {@linkplain Block} in the sequential list of all existing {@linkplain Block}s in the
+	 *            current segment.
+	 * 
+	 * @return The specified {@linkplain Block} object in the current segmet.
+	 */
 	public Block getBlock(int blockNumber) {
 		return new Block();
 	}
 
+	/**
+	 * @return the first {@linkplain Block} that has not been written, yet.<br>
+	 *         {@code null} if there is no empty {@linkplain Block}.
+	 */
 	public Block getFirstEmptyBlock() {
 		return firstEmptyBlock;
 	}
 
-	/**
-	 * Read a {@linkplain Block} file from the given file path.
-	 * 
-	 * @param filePath
-	 *            where the requested block can be found on the file system
-	 * 
-	 * @return A {@linkplain Block} object representing the just read block file
-	 */
 	private Block readBlockFile(URI filePath) {
+		return new Block();
 	}
 
 	@Deprecated
@@ -79,7 +88,7 @@ public final class DiskManager {
 	}
 
 	private Boolean appendBlock() {
-
+		return null;
 	}
 
 }
